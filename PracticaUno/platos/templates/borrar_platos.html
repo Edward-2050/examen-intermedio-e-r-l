@@ -1,0 +1,6 @@
+{% extends 'base_generic.html' %}
+<title>{% block title %}Borrar platos menor de 15 soles{% endblock %}</title>
+{% block content %}
+plato = Platos.objects.get(precio__lt=15)
+plato.delete()
+{% endblock %}
