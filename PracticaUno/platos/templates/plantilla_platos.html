@@ -1,5 +1,26 @@
 {% extends 'base_generic.html' %}
 <title>{% block title %}Lista de platos{% endblock %}</title>
 {% block content %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nº</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Procedencia</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for elemneto in data %}
+    <tr>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{ elemneto.nombre }}</td>
+      <td>{{ elemneto.precio }}</td>
+      <td>{{ elemneto.procedencia }}</td>
+    </tr>
+{% endfor %}
+
+  </tbody>
+</table>
 
 {% endblock %}
